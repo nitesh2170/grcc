@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>groceries</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/b9e42e9bca.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="as.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="javascript.js"></script>
+
+  <style>
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&display=swap');
+
+
+    .main2 {
+      width: 100%;
+      text-align: center;
+
+    }
+
+    .navbar {
+      background: #cf4141;
+      width: 100%;
+      display: flex;
+    }
+
+    .logo {
+      width: 10%;
+      padding: 8px;
+    }
+
+    .list {
+      width: 40%;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-container {
+      width: 20%;
+      align-items: center;
+    }
+
+    .cart {
+      width: 15%;
+      align-items: center;
+
+    }
+
+    .login {
+      width: 15%;
+      align-items: center;
+
+    }
+
+    .scroll {
+      background: #9372ec;
+      height: 500px;
+      background-image: url(vegetables.jpg);
+      background-repeat: repeat;
+      padding-left: 100px;
+      align-items: center;
+      font-variant-caps: small-caps;
+    }
+
+    .bgimg {
+      height: 600px;
+      align-items: center;
+      /* margin: 400px; */
+      padding-left: 450px;
+      padding-top: 250px;
+      color: white;
+      /* font-family: Arial, Helvetica, sans-serif; */
+      font-style: italic;
+      font-variant-caps: small-caps;
+    }
+
+    .content {
+      height: 200px;
+      background: #ffffff;
+      padding-left: 650px;
+      padding-top: 100px;
+
+    }
+
+    .content button {
+      align-items: center;
+      height: 50px;
+      background: orange;
+      color: #000000;
+      /* padding-left: 700px; */
+      border: 1px solid black;
+      border-radius: 20px;
+      width: 200px;
+      font-size: 20px;
+      padding: 10px;
+
+    }
+
+    .detail {
+      align-items: center;
+      display: flex;
+      /* font-kerning: ; */
+      font-variant-caps: small-caps;
+
+
+    }
+
+    .cont,
+    .cont2 {
+      width: 50%;
+      padding-left: 100px;
+      font-display: optional;
+    }
+
+    .cont2 {
+      width: 50%;
+      padding-left: 100px;
+      display: flex;
+
+    }
+
+    #vertical-menu {
+      width: 200px;
+      /* Set a width if you like */
+    }
+
+    #vertical-menu a {
+      background-color: #eee;
+      /* Grey background color */
+      color: black;
+      /* Black text color */
+      display: none;
+      /* Make the links appear below each other */
+      padding: 12px;
+      /* Add some padding */
+      text-decoration: none;
+      /* Remove underline from links */
+    }
+
+    #vertical-menu a:hover {
+      background-color: #ccc;
+      /* Dark grey background on mouse-over */
+    }
+
+    .checked {
+      color: green;
+    }
+
+    .butt {
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <i id="men" class="fa-solid fa-bars header__menu-icon" data-menu-button aria-label="Menu icon" tabindex="0"
+      onclick="list()"></i>
+    <img src="https://cdn3.vectorstock.com/i/1000x1000/98/12/logo-for-grocery-store-vector-21609812.jpg" width="70"
+      height="70">
+    <ul class="list">
+      <li>Home</li>
+      <li>About Us</li>
+      <li>Contact Us</li>
+      <li>Review</li>
+      <li>Products</li>
+    </ul>
+    <div class="header__search-cart">
+      <input type="search" placeholder="Search" class="header__search-text invisible" data-search-bar>
+      <i class="fa-solid fa-magnifying-glass header__search-icon" data-search-icon aria-label="Search icon"
+        tabindex="0"></i>
+      <section class="header__shopping-cart">
+        <i class="fa-solid fa-cart-shopping header__shopping-cart__icon" aria-label="Shopping cart icon" tabindex="0"
+          data-cart-icon></i>
+        <span class="header__shopping-cart__count invisible" data-cart-count></span>
+      </section>
+    </div>
+  </header>
+
+  <div id="vertical-menu">
+    <a href="#"><b>Catogary</b></a>
+    <a href="#">fruits</a>
+    <a href="#">Vegetable</a>
+    <a href="#">Dairy Products</a>
+    <a href="#">All Products</a>
+  </div>
+
+
+  <div class="scroll">
+    <div class="bgimg">
+      <h1>GROCERIES AND <br> MANY MORE</h1>
+
+
+    </div>
+    <div class="item1" id="Fruit">
+
+      <div class="item">
+        <div><img src="\products\banana.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Banana</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+      <div class="item">
+        <div><img src="\products\blueberry.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Blueberry</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+      <div class="item">
+        <div><img src="\products\orange.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Orange</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="item">
+        <img src="\products\papaya.jpg" class="image" alt="items">
+        <div><label for="item1">Papaya</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+      <div class="item">
+        <img src="\products\pineapple.jpg" class="image" alt="items">
+        <div><label for="item1">Pineapple</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+      <div class="item">
+        <img src="\products\strawberry.jpg" class="image" alt="items">
+        <div><label for="item1">Strawberry</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="item">
+        <div><img src="\products\pomegranate.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Pomegranate</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="item2" id="Fruit">
+
+      <div class="item">
+        <div><img src="\products\mango.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Mango</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="item">
+        <div><img src="\products\green-apple.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Green Apple</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item">
+        <div>
+          <img src="\products\kiwi.jpg" alt="" class="image">
+        </div>
+        <div><label for="item1">Kiwi</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+      <div class="item">
+        <div><img src="\products\fig.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Fig</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+      <div class="item">
+        <div><img src="\products\peach.jpg" alt="" class="image"></div>
+        <div><label for="item1">Peach</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\red-apple.jpg" alt="" class="image"></div>
+        <div><label for="item1">Red Apple</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div><img src="\products\grapes.jpg" alt="" class="image"> </div>
+        <div><label for="item1">Grapes</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="item2" id="vegies">
+
+
+      <div class="item">
+        <div><img src="\products\lemon.jpg" alt="" class="image"></div>
+        <div><label for="item1">Lemon</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="item">
+        <div><img src="\products\cucumber.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Cucumber</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item"><img src="\products\eggplant.jpg" alt="" class="image">
+        <div><label for="item1">Eggplant</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item"><img src="\products\avocado.jpg" alt="" class="image">
+        <div><label for="item1">Avocado</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="item"><img src="\products\beet.jpg" alt="" class="image">
+        <div><label for="item1">Beet</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item"><img src="\products\broccoli.jpg" alt="" class="image">
+        <div><label for="item1">Broccoli</label>
+          <br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item"><img src="\products\garlic.jpg" alt="" class="image">
+        <div><label for="item1">Garlic</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="item2" id="DAL">
+
+      <div class="item">
+        <div><img src="\products\onion.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Onion</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\tomato.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Tomato</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\zucchini.jpg" alt="" class="image"></div>
+        <div><label for="item1">Zucchini</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\almond-milk.jpg" alt="" class="image"></div>
+        <div><label for="item1">Almond Milk</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\soybeans.jpg" alt="" class="image">
+          <div><label for="item1">Soyabeans</label><br><br></div>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div><img src="\products\cherry.jpg" alt="" class="image"></div>
+        <div><label for="item1">Cherry</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\raisins.jpg" alt="" class="image"></div>
+        <div><label for="item1">Raisins</label><br><br>
+          Amount: $80 <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="item2">
+
+      <div class="item">
+        <div><img src="\products\granola.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Granola</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\honey.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Honey</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item"><img src="\products\pistachio.jpg" alt="" class="image">
+        <div><label for="item1">Pistachio</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item"><img src="\products\peanuts.jpg" alt="" class="image">
+        <div><label for="item1">Peanuta</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      <div class="item"><img src="\products\peach.jpg" alt="" class="image">
+        <div><label for="item1">Peach</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item"><img src="\products\red-beans.jpg" alt="" class="image">
+        <div><label for="item1">Red Beans</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item"><img src="\products\almonds.jpg" alt="" class="image">
+        <div><label for="item1">Almonds</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item2">
+
+      <div class="item">
+        <div><img src="\products\potatoes.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Potatoes</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\bread.jpg" alt="items" class="image"></div>
+        <div><label for="item1">Bread</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item">
+        <div><img src="products/eggs.jpg" alt="" class="image"></div>
+        <div><label for="item1">Egg</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\cherry.jpg" alt="" class="image"></div>
+        <div><label for="item1">Cherry</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      <div class="item">
+        <div><img src="\products\brownies.jpg" alt="" class="image"></div>
+        <div><label for="item1">Brownies</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\raspberries.jpg" alt="" class="image"></div>
+        <div><label for="item1">Raspberries</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item">
+        <div><img src="\products\rice.jpg" alt="" class="image"></div>
+        <div><label for="item1">Rice</label><br><br>
+          Amount: $80
+          <br><br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <br>
+          <div class="but">
+            <input class="butt" type="button" value="Add">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <footer class="footer">
+      <section class="footer__social-media">
+         <h2 class="footer__title">Follow Us</h2>
+         <div class="footer__social-media__icons">
+            <a href="#" class="fa-brands fa-facebook footer__icon"></a>
+            <a href="#" class="fa-brands fa-instagram footer__icon"></a>
+            <a href="#" class="fa-brands fa-twitter footer__icon"></a>
+         </div>
+      </section>
+      <ul class="footer__list">
+         <li class="footer__item">
+            <a href="#" class="footer__link">About Us</a>
+         </li>
+         <li class="footer__item">
+            <a href="#" class="footer__link">Terms of Use</a>
+         </li>
+         <li class="footer__item">
+            <a href="#" class="footer__link">FAQ</a>
+         </li>
+         <li class="footer__item">
+            <a href="#" class="footer__link">Help</a>
+         </li>
+      </ul>
+      <div class="developer">
+         <span class="developer__title">Tech sapians</span>
+         <span class="developer__year">2023</span>
+      </div>
+   </footer>
+
+
+
+
+
+</body>
+
+</html>

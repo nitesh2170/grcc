@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&display=swap');
+
+        .services {
+    width: 100%;
+}
+
+.services-description {
+    padding: 3rem 0 4rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.service-description-text {
+    width: 50%;
+}
+
+.service-description-title h1 {
+    padding-bottom: 0.6rem;
+    color: var(--color-dark-2);
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    border-bottom: 2px dashed var(--color-light-gray);
+}
+
+.service-description-details {
+    padding-top: 1.4rem;
+}
+
+.service-description-details p {
+    font-size: 1.2rem;
+}
+
+.service-description-list {
+    padding-top: 0.6rem;
+}
+
+.service-description-list-item {
+    padding-top: 1.3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.service-description-list-item span {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+}
+
+.service-description-list-item p {
+    margin-left: 0.6rem;
+    padding: 0 0.2rem 0;
+    position: relative;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.service-description-list-item:hover p {
+    color: var(--color-light-1);
+}
+
+.service-description-list-item p::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: olivedrab;
+    border-radius: 0.1rem;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    transform-origin: left;
+    z-index: -1;
+}
+
+.service-description-list-item:hover p::before {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
+    visibility: visible;
+}
+
+.service-description-image {
+    position: relative;
+    width: 45%;
+    height: 450px;
+}
+
+.service-description-image::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.2rem;
+}
+
+.service-description-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 0.2rem;
+}
+
+.service-description-button {
+    margin-top: 2rem;
+}
+
+.service-description-button button {
+    color: var(--color-light-1);
+    font-size: 1.2rem;
+    height: 2.6rem;
+    width: 8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+    border-radius: 0.1rem;
+}
+
+.service-card-wrap {
+    margin-top: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.service-image-wrap {
+    position: relative;
+    width: 25%;
+    height: 36.6rem;
+}
+
+.service-image {
+    height: 100%;
+    width: 100%;
+}
+
+.service-image::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.2rem;
+}
+
+.service-image img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 0.1rem;
+}
+
+.service-image-text {
+    padding: 1.6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 460px;
+    height: auto;
+    background: var(--color-light-1);
+    -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+    -ms-transform: translate(-50%, -50%) rotate(-90deg);
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.service-image-text h1 {
+    color: var(--color-primary);
+    font-size: 2.8rem;
+    text-align: center;
+    border-bottom: 2px dashed var(--color-light-gray);
+    text-transform: uppercase;
+}
+
+.service-image-text p {
+    padding-top: 0.8rem;
+    color: var(--color-dark-3);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.service-cards {
+    margin-left: 2.2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 75%;
+    height: auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.service-card {
+    margin: 0 1.8rem 1.8rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 11rem;
+    width: 30rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0.2rem 0.2rem 0.8rem var(--color-light-4);
+    box-shadow: 0.2rem 0.2rem 0.8rem var(--color-light-4);
+}
+
+.service-card .service-card-no {
+    display: -ms-grid;
+    display: grid;
+    width: 30%;
+    height: 100%;
+    place-items: center;
+    border-radius: 0.2rem 0 0 0.2rem;
+}
+
+.service-card-no h1 {
+    color: var(--color-light-1);
+    font-size: 3rem;
+}
+
+.service-card .service-card-details {
+    padding: 1.1rem;
+    height: 100%;
+    width: 70%;
+    border-radius: 0 0.2rem 0.2rem 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.service-card-details h3 {
+    font-size: 1.4rem;
+}
+
+.service-card-details p {
+    padding-top: 0.6rem;
+    font-size: 1rem;
+}
+
+.service-card-details p a {
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.service-card:nth-child(1) .service-card-no {
+    background: #316131;
+}
+
+.service-card:nth-child(2) .service-card-no {
+    background: olivedrab;
+}
+
+.service-card:nth-child(3) .service-card-no {
+    background: #2f4f4f;
+}
+
+.service-card:nth-child(4) .service-card-no {
+    background: teal;
+}
+
+.service-card:nth-child(5) .service-card-no {
+    background: brown;
+}
+
+.service-card:nth-child(6) .service-card-no {
+    background: crimson;
+}
+
+.service-card:nth-child(1) .service-card-details h3,
+.service-card:nth-child(1) .service-card-details p a {
+    color: #316131;
+}
+
+.service-card:nth-child(2) .service-card-details h3,
+.service-card:nth-child(2) .service-card-details p a {
+    color: olivedrab;
+}
+
+.service-card:nth-child(3) .service-card-details h3,
+.service-card:nth-child(3) .service-card-details p a {
+    color: #2f4f4f;
+}
+
+.service-card:nth-child(4) .service-card-details h3,
+.service-card:nth-child(4) .service-card-details p a {
+    color: teal;
+}
+
+.service-card:nth-child(5) .service-card-details h3,
+.service-card:nth-child(5) .service-card-details p a {
+    color: brown;
+}
+
+.service-card:nth-child(6) .service-card-details h3,
+.service-card:nth-child(6) .service-card-details p a {
+    color: crimson;
+}
+
+    </style>
+</head>
+<body>
+    <div class="services" id="services">
+        <div class="section-wrap">
+            <div class="services-description">
+                <div class="service-description-text">
+                    <div class="service-description-title">
+                        <h1>What we provide?</h1>
+                    </div>
+
+                    <div class="service-description-details">
+                        <p>Adipisicing elit praesentium laudantium saepe explicabo alias odit debitis provident
+                            cumque reiciendis earum quibusdam illo sit pariatur unde aperiam totam quisquam illum
+                            facilis deleniti quae doloremque natus corrupti quidem architecto quam molestiae neque
+                            cupiditate sapiente quo assumenda quia ratione ducimus excepturi iure aliquam labore.
+                        </p>
+                    </div>
+
+                    <div class="service-description-list">
+                        <div class="service-description-list-item">
+                            <span class="icon-check-circle"></span>
+                            <p class="service-list-item-title">Aspernatur accusantium maxime doloremque itaque.</p>
+                        </div>
+
+                        <div class="service-description-list-item">
+                            <span class="icon-check-circle"></span>
+                            <p class="service-list-item-title">Consectetur adipisicing elit molestiae fugiat
+                                perferendis.</p>
+                        </div>
+
+                        <div class="service-description-list-item">
+                            <span class="icon-check-circle"></span>
+                            <p class="service-list-item-title">Dapiente ipsa omnisode temporibus accusamus
+                                obcaecate.</p>
+                        </div>
+
+                        <div class="service-description-list-item">
+                            <span class="icon-check-circle"></span>
+                            <p class="service-list-item-title">Minima quia nobis sint suscipit harum assumenda
+                                error.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-description-button">
+                        <button>Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service-description-image">
+                    <img src="/products/service.jpg" alt="service_img">
+                </div>
+            </div>
+
+            <div class="service-card-wrap">
+                <div class="service-image-wrap">
+                    <div class="service-image">
+                        <img src="/products/service-img.jpg" alt="">
+                    </div>
+                    <div class="service-image-text">
+                        <h1>Our Services</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur libero neque officia eum quaerat sapiente est
+                            debitis</p>
+                    </div>
+                </div>
+
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="service-card-no">
+                            <h1>01</h1>
+                        </div>
+                        <div class="service-card-details">
+                            <h3>Fresh Products</h3>
+                            <p>Qutem optio alias ducimus
+                                dignissimos consequuntur unde iure illum sapiente explicabo dolore pariatur eligendi
+                                fuga asperiores lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#">Read More >></a></p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-no">
+                            <h1>02</h1>
+                        </div>
+                        <div class="service-card-details">
+                            <h3>Fast Delivery</h3>
+                            <p>Qutem optio alias ducimus
+                                dignissimos consequuntur unde iure illum sapiente explicabo dolore pariatur eligendi
+                                fuga asperiores lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#">Read More >></a></p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-no">
+                            <h1>03</h1>
+                        </div>
+                        <div class="service-card-details">
+                            <h3>Best Pricing</h3>
+                            <p>Qutem optio alias ducimus
+                                dignissimos consequuntur unde iure illum sapiente explicabo dolore pariatur eligendi
+                                fuga asperiores lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#">Read More >></a></p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-no">
+                            <h1>04</h1>
+                        </div>
+                        <div class="service-card-details">
+                            <h3>Random Offers</h3>
+                            <p>Qutem optio alias ducimus
+                                dignissimos consequuntur unde iure illum sapiente explicabo dolore pariatur eligendi
+                                fuga asperiores lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#">Read More >></a></p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-no">
+                            <h1>05</h1>
+                        </div>
+                        <div class="service-card-details">
+                            <h3>Easy Payment</h3>
+                            <p>Qutem optio alias ducimus
+                                dignissimos consequuntur unde iure illum sapiente explicabo dolore pariatur eligendi
+                                fuga asperiores lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#">Read More >></a></p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-no">
+                            <h1>06</h1>
+                        </div>
+                        <div class="service-card-details">
+                            <h3>Customer Support</h3>
+                            <p>Qutem optio alias ducimus
+                                dignissimos consequuntur unde iure illum sapiente explicabo dolore pariatur eligendi
+                                fuga asperiores lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#">Read More >></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

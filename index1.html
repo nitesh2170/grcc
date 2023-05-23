@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+   <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+   <title>Grocery Store</title>
+   <script src="https://kit.fontawesome.com/b9e42e9bca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="as.css">
+    <style>
+        .main2 {
+            width: 100%;
+            text-align: center;
+
+        }
+
+        .navbar {
+            background: #cf4141;
+            width: 100%;
+            display: flex;
+        }
+
+        .logo {
+            width: 10%;
+            padding: 8px;
+        }
+
+        .list {
+            width: 40%;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container {
+            width: 20%;
+            align-items: center;
+        }
+
+        .cart {
+            width: 15%;
+            align-items: center;
+
+        }
+
+        .login {
+            width: 15%;
+            align-items: center;
+
+        }
+
+        .scroll {
+            background: #9372ec;
+            height: 500px;
+            background-image: url(vegetables.jpg);
+            background-repeat: repeat;
+            padding-left: 100px;
+            align-items: center;
+            font-variant-caps: small-caps;
+        }
+
+        .bgimg {
+            height: 600px;
+            align-items: center;
+            /* margin: 400px; */
+            padding-left: 450px;
+            padding-top: 250px;
+            color: white;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-style: italic;
+            font-variant-caps: small-caps;
+        }
+
+        .content {
+            height: 200px;
+            background: #ffffff;
+            padding-left: 650px;
+            padding-top: 100px;
+
+        }
+
+        .content button {
+            align-items: center;
+            height: 50px;
+            background: orange;
+            color: #000000;
+            /* padding-left: 700px; */
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 200px;
+            font-size: 20px;
+            padding: 10px;
+
+        }
+
+        .detail {
+            align-items: center;
+            display: flex;
+            /* font-kerning: ; */
+            font-variant-caps: small-caps;
+
+
+        }
+
+.cont,
+        .cont2 {
+            width: 50%;        
+            padding-left: 100px;
+            font-display: optional;
+        }
+        .cont2{
+            width: 50%;
+            padding-left: 100px;
+            display: flex;
+            
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <i id="men" class="fa-solid fa-bars header__menu-icon" data-menu-button aria-label="Menu icon" tabindex="0"></i>
+        <img src="https://cdn3.vectorstock.com/i/1000x1000/98/12/logo-for-grocery-store-vector-21609812.jpg" width="70" height="70">
+            <ul class="list">
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Contact Us</li>
+                <li>Reviwe</li>
+                <li>Products</li>
+            </ul>
+        <div class="header__search-cart">        
+           <input type="search" placeholder="Search" class="header__search-text invisible" data-search-bar>
+           <i class="fa-solid fa-magnifying-glass header__search-icon" data-search-icon aria-label="Search icon" tabindex="0"></i>
+           <section class="header__shopping-cart">
+              <i class="fa-solid fa-cart-shopping header__shopping-cart__icon" aria-label="Shopping cart icon" tabindex="0" data-cart-icon></i>
+              <span class="header__shopping-cart__count invisible" data-cart-count></span>
+           </section>
+        </div>
+     </header>
+
+    <div class="scroll">
+        <div class="bgimg">
+            <h1>GROCERIES AND <br> MANY MORE</h1>
+
+
+        </div>
+
+    </div>
+    <div class="detail">
+        <div class="cont">
+            <P>CONTACT US</P>
+        </div>
+        <div class="cont2">
+            <div>
+                <P>LOGIN</P>
+            </div>
+            <div>
+                <P>SIGN UP</P>
+            </div>
+        </div>
+        <P></P>
+
+    </div>
+
+
+    <div class="content">
+        <!-- <input type="button" id="view" value="SHOP NOW"> -->
+        <button > <a href="groceries.html">SHOP NOW</a></button>
+    </div>
+</body>
+</html>
